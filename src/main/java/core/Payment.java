@@ -45,17 +45,8 @@ public class Payment {
 
               // "$1,654.55";
 
-              String string_monthly_payment = ((WebDriver) driver).findElement(By.id("id_monthly_payment")).getText();
-
-              String regex = "^"
-
-                           + "(?:\\$)?"
-
-                           + "(?:\\s*)?"
-
-                           + "((?:\\d{1,3})(?:\\,)?(?:\\d{3})?(\\d{0,2})?)"
-
-                           + "$";
+              String string_monthly_payment = driver.findElement(By.id("id_monthly_payment")).getText();
+              String regex = "^" + "(?:\\$)?" + "(?:\\s*)?" + "((?:\\d{1,3})(?:\\,)?(?:\\d{3})?(?:\\.)?(\\d{0,2})?)" + "$";
 
               Pattern p = Pattern.compile(regex);
 
